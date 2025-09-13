@@ -9,7 +9,7 @@ const TodoList = () => {
     // State to manage each input field for the nested list items by heading index
     const [listInputs, setListInputs] = useState({});
     // Function to add a new todo heading (if input is not empty)
-    const handleHedaing = () => {
+    const handleAddTodo = () => {
         if (headingInput.trim() !== '') {
             // Append new todo with empty list array
             setTodos([...todos, { heading: headingInput, lists: [] }]);
@@ -48,7 +48,7 @@ const TodoList = () => {
                         value={headingInput}
                         onChange={(e) => setHeadingInput(e.target.value)} // Update heading input value
                     />
-                    <button className="add-list-button" onClick={handleHedaing}>
+                    <button className="add-list-button" onClick={handleAddTodo}>
                         Add Heading
                     </button>
                 </div>
